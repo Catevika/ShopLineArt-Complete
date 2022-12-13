@@ -25,3 +25,12 @@ app.use('/', authRoute);
 app.listen(process.env.EXPRESS_PORT, () =>
 	console.log('\x1b[33m', `Server running on port ${process.env.EXPRESS_PORT}`)
 );
+
+if (process.env.NODE_ENV === 'production') {
+	//*Set static folder up in production
+	app.use(express.static('client/build'));
+
+	app.get('*', (req, res) =>
+		res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+	);
+}

@@ -2,11 +2,13 @@
   "name": "shoplineart-complete",
   "version": "1.0.0",
   "description": "PEXELS gallery browser and photos downloader",
-  "main": "server/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
-    "client": "npm run dev --prefix ./client",
-    "dev": "concurrently \"npm start\" \"npm run client\""
+    "server": "nodemon server/index.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm start\" \"npm run client\"",
+    "build": "npm run build --prefix client"
   },
   "keywords": [
     "pexels",
