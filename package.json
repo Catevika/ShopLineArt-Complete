@@ -1,0 +1,23 @@
+{
+  "name": "shoplineart-complete",
+  "version": "1.0.0",
+  "description": "PEXELS gallery browser and photos downloader",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "client": "npm run dev --prefix ./client",
+    "dev": "concurrently \"npm start\" \"npm run client\""
+  },
+  "keywords": [
+    "pexels",
+    "gallery",
+    "photos",
+    "download",
+    "catevika"
+  ],
+  "author": "Catevika",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

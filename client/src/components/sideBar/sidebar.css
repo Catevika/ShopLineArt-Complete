@@ -1,0 +1,117 @@
+.sidebar__container {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  bottom: 1rem;
+  width: 125px;
+  border: 1px solid var(--night, var(--gold-70)) var(--day, var(--orange-70));
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.nav__items-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: calc(100vh - 285px);
+  background-color: var(--night, var(--dark)) var(--day, var(--gray));
+  border-radius: 10px;
+  z-index: 250;
+}
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  margin: 40px 10px 40px;
+}
+
+.active-link {
+  color: var(--night, var(--gold-70)) var(--day, var(--orange-70));
+}
+
+.nav__icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 10px;
+}
+
+.nav__icon-white>path {
+  fill: var(--night, var(--gray)) var(--day, var(--dark));
+  stroke: var(--night, var(--dark)) var(--day, var(--gray));
+}
+
+.nav__icon-white>g {
+  fill: var(--night, var(--dark)) var(--day, var(--gray));
+}
+
+.nav__link:hover>.nav__icon-white>path {
+  fill: var(--night, var(--gold)) var(--day, var(--orange));
+}
+
+.active-link>.nav__icon-white>path {
+  fill: var(--night, var(--gold-70)) var(--day, var(--orange-70));
+}
+
+.nav__icon-notification-container {
+  position: relative;
+  width: 100%;
+}
+
+.nav__icon-notification {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: -20px 40px 0 0;
+  padding: 3px 7px 1px;
+  font-weight: 500;
+  color: var(--night, var(--gold-70)) var(--day, var(--orange-70));
+  background-color: var(--night, var(--dark)) var(--day, var(--gray));
+  border: 2px solid var(--night, var(--gold-70)) var(--day, var(--orange-70));
+  border-radius: 50%;
+  cursor: default;
+}
+
+@media screen and (max-width: 575px) {
+  .sidebar__container {
+    bottom: 0;
+    border: none;
+    /* background-color: transparent; */
+  }
+
+  .nav__container {
+    width: calc(100vw - 2rem);
+    overflow-x: unset;
+  }
+
+  .nav__items-list {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    width: calc(100vw - 2rem);
+    height: 100%;
+    margin-top: calc(100vh - 210px);
+    margin-left: 0;
+    padding: 10px 0 5px;
+    border: 1px solid var(--night, var(--gold)) var(--day, var(--orange));
+    border-radius: 10px;
+    z-index: 850;
+  }
+
+  .nav__link {
+    margin: 0;
+  }
+
+  .nav__icon {
+    margin-right: 0;
+  }
+
+  .nav__icon-notification {
+    margin: -5px -20px 0 0;
+  }
+
+  .nav__link {
+    flex-direction: column;
+  }
+}

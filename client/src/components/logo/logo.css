@@ -1,0 +1,68 @@
+.logo__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo-img {
+  width: 123px;
+  height: 123px;
+  margin: 1rem;
+}
+
+#day .logo-img {
+  -webkit-filter: hue-rotate(320deg);
+  filter: hue-rotate(320deg);
+}
+
+#night .logo-img {
+  -webkit-filter: hue-rotate(330deg);
+  filter: hue-rotate(330deg);
+}
+
+
+.logo-caption {
+  font-family: 'Stint Ultra Condensed', cursive;
+  font-size: 2rem;
+  color: var(--night, var(--gray)) var(--day, var(--dark));
+  margin-top: -5px;
+}
+
+@media screen and (max-width: 575px) {
+  .logo__container {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: calc(100vw - 2rem);
+    height: 75px;
+  }
+
+  .logo {
+    flex-direction: row;
+    z-index: 200;
+    padding: 1rem 0 0;
+  }
+
+  .logo-img {
+    width: 84px;
+    height: 84px;
+  }
+
+  .logo-caption {
+    margin-left: -25px;
+  }
+
+  .logo__btn-logout {
+    margin-top: 105px;
+    margin-left: -100px;
+    z-index: 250;
+  }
+}

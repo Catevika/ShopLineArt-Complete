@@ -1,0 +1,99 @@
+.photo__img-container {
+  position: relative;
+}
+
+.photo__img {
+  width: calc(100% - 1rem);
+  padding: 10px;
+  border: 1px solid var(--night, var(--gray)) var(--day, var(--dark));
+}
+
+.photo__overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: calc(100% - 1rem);
+  height: calc(100% - 0.5rem);
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.photo__img-wrapper:hover .photo__overlay {
+  opacity: 0.75;
+}
+
+.photo__text-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 5px 7px;
+  border-radius: 10px;
+  background-color: var(--dark-50);
+}
+
+.photo__text {
+  position: absolute;
+  z-index: 2;
+  bottom: 20.5px;
+  left: 20px;
+  font-weight: 800;
+  color: var(--white);
+  opacity: 1
+}
+
+.photo__link {
+  color: var(--white);
+  opacity: 1;
+}
+
+.photo__text p span,
+.photo__link p span {
+  color: var(--white);
+  font-weight: 400;
+  opacity: 1;
+}
+
+.photo__link:hover {
+  color: var(--night, var(--gold)) var(--day, var(--orange));
+}
+
+.cart__icon {
+  position: absolute;
+  z-index: 50;
+  bottom: 0;
+  right: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 20px 30px;
+  color: var(--night, var(--gold-70)) var(--day, var(--orange-70))
+}
+
+.cart__icon:hover {
+  color: var(--night, var(--dark)) var(--day, var(--gray));
+  stroke: var(--night, var(--gold)) var(--day, var(--orange));
+  stroke-width: 20px;
+}
+
+.cart__icon-disabled {
+  position: absolute;
+  z-index: 50;
+  bottom: 0;
+  right: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 25px;
+  visibility: hidden;
+  cursor: none;
+}
+
+@media screen and (max-width: 575px) {
+  .photo__img {
+    width: calc(100% - 10px)
+  }
+
+  .photo__overlay {
+    width: calc(100% - 0.5rem);
+  }
+}

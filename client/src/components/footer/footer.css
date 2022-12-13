@@ -1,0 +1,22 @@
+.footer__container {
+  position: fixed;
+  bottom: 0;
+  font-size: 0.9rem;
+  text-align: center;
+  width: 125px;
+  margin: 0 1rem;
+  padding: 10px 10px 20px;
+}
+
+@media screen and (max-width: 575px) {
+  .footer__container {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    background-color: var(--night, var(--dark)) var(--day, var(--gray));
+  }
+
+  .footer__container p {
+    z-index: 5;
+  }
+}
