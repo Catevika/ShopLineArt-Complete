@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
-import { AuthContext } from './context/authContext/AuthContext';
+import { AuthContext } from './context/authContext/authContext';
 import { ThemeContext } from './context/themeContext/themeContext';
 import BasicLayout from './components/basicLayout/BasicLayout';
 import Home from './pages/home/Home';

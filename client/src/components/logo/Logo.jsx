@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../context/authContext/AuthContext';
+import { AuthContext } from '../../context/authContext/authContext';
 import logoUrl from '../../assets/logo.png';
 import './logo.css';
 import { CartContext } from '../../context/cartContext/cartContext';

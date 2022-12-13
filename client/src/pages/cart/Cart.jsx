@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import JSZip from "jszip";
 import saveAs from 'file-saver';
-import { AuthContext } from '../../context/authContext/AuthContext';
+import { AuthContext } from '../../context/authContext/authContext';
 import { CartContext } from '../../context/cartContext/cartContext';
 import { HiMinusCircle } from 'react-icons/hi';
 import './cart.css';
