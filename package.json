@@ -13,7 +13,13 @@
     "gallery",
     "photos",
     "download",
-    "catevika"
+    "catevika",
+    "vite",
+    "react",
+    "emailjs",
+    "jszip",
+    "responsive",
+    "learning"
   ],
   "author": "Catevika",
   "license": "MIT",
