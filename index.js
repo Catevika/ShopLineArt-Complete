@@ -14,8 +14,9 @@ app.use(cors());
 
 const connectDB = () => {
 	try {
-		const conn = mongoose.connect(process.env.MONGO_URI);
-		console.log('\x1b[33m', `MongoDB Connected: ${conn.connection.host}`);
+		mongoose.set('strictQuery', false);
+		mongoose.connect(process.env.MONGO_URI);
+		console.log('\x1b[33m', `MongoDB Connected successfully`);
 	} catch (error) {
 		console.log(error);
 		process.exit(1);
@@ -29,10 +30,9 @@ app.use(morgan('common'));
 
 app.use('/', authRoute);
 
-connectDB().then(() => {
-	app.listen(process.env.EXPRESS_PORT || 8800);
-	console.log('\x1b[33m', `Server running on port ${process.env.EXPRESS_PORT}`);
-});
+connectDB();
+app.listen(process.env.EXPRESS_PORT || 8800);
+console.log('\x1b[33m', `Server running on port ${process.env.EXPRESS_PORT}`);
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/dist'));
