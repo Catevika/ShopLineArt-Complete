@@ -12,9 +12,9 @@ dotenv.config();
 const app = express();
 app.use(cors());
 
-const connectDB = async () => {
+const connectDB = () => {
 	try {
-		const conn = await mongoose.connect(process.env.MONGO_URI);
+		const conn = mongoose.connect(process.env.MONGO_URI);
 		console.log('\x1b[33m', `MongoDB Connected: ${conn.connection.host}`);
 	} catch (error) {
 		console.log(error);
@@ -30,12 +30,8 @@ app.use(morgan('common'));
 app.use('/', authRoute);
 
 connectDB().then(() => {
-	app.listen(process.env.EXPRESS_PORT || 8800, () =>
-		console.log(
-			'\x1b[33m',
-			`Server running on port ${process.env.EXPRESS_PORT}`
-		)
-	);
+	app.listen(process.env.EXPRESS_PORT || 8800);
+	console.log('\x1b[33m', `Server running on port ${process.env.EXPRESS_PORT}`);
 });
 
 if (process.env.NODE_ENV === 'production') {
