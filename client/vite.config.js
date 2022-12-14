@@ -6,7 +6,7 @@ export default defineConfig({
 	server: {
 		proxy: {
 			'/api': {
-				target: 'https://shoplineart.netlify.app:8800',
+				target: 'https://perfect-duck-bandanna.cyclic.app/:8800',
 				changeOrigin: true,
 				secure: false
 			}
