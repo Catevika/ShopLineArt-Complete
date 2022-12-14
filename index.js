@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import path from 'path';
 
 import authRoute from './routes/authRoute.js';
 
