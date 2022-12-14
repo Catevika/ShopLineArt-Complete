@@ -11,9 +11,15 @@ dotenv.config();
 const app = express();
 app.use(cors());
 
-mongoose.connect(process.env.MONGO_URI, () =>
-	console.log('\x1b[33m', 'MongoDB connected successfully')
-);
+const connectDB = async () => {
+	try {
+		const conn = await mongoose.connect(process.env.MONGO_URI);
+		console.log('\x1b[33m', `MongoDB Connected: ${conn.connection.host}`);
+	} catch (error) {
+		console.log(error);
+		process.exit(1);
+	}
+};
 
 app.use(express.json());
 app.use(helmet());
@@ -22,9 +28,14 @@ app.use(morgan('common'));
 
 app.use('/', authRoute);
 
-app.listen(process.env.EXPRESS_PORT, () =>
-	console.log('\x1b[33m', `Server running on port ${process.env.EXPRESS_PORT}`)
-);
+connectDB().then(() => {
+	app.listen(process.env.EXPRESS_PORT || 8800, () =>
+		console.log(
+			'\x1b[33m',
+			`Server running on port ${process.env.EXPRESS_PORT}`
+		)
+	);
+});
 
 if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/dist'));
